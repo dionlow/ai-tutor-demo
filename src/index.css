@@ -1,0 +1,72 @@
+:root {
+  font-family: SF Pro, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --color-white:#FFFFFF;
+  --color-light-gray-1: #F3F3F3;
+  --color-light-gray-2: #D4D4D4;
+  --color-light-gray-3: #909090;
+  --color-blue-gray: #AAB5C0;
+  --color-black: #000000;
+  --color-uni-green: #29C195;
+  --color-uni-yello:#FFCA5C;
+  --color-uni-blue: #1C49FF;
+
+  color-scheme: light dark;
+  color: var(--color-black);
+  background-color:  var(--color-light-gray-1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: fill-available;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+/* Utility Classes */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

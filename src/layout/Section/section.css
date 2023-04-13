@@ -1,0 +1,35 @@
+.section {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.section__title {
+  font: Inter;
+  color: var(--color-light-gray-3);
+}
+
+.section__list {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  margin: .5rem 0;
+  list-style: none;
+}
+
+.section__list__item {
+  padding: 1rem;
+  display: flex;
+  font-size: 26px;
+  border-bottom: 1px solid var(--color-light-gray-1);
+}
+
+.section__list__item:last-child {
+  border-bottom: none;
+}
+
+.section__list__bullet-item::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--color-uni-green); /* Change the color */
+  font-weight: bold; 
+  /* width: 2em; Also needed for space (tweak if needed) */
+  margin: 0 .5rem;
+}

@@ -1,0 +1,47 @@
+.history-title {
+  margin: auto;
+}
+
+.section__list__item--grid-container {
+  display: grid;
+  grid-template-columns: 4rem minmax(auto, 1fr) auto;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 4rem;
+  overflow: hidden;
+}
+
+.section__list__item__grid-item {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section__list__item-content {
+  display: flex;
+}
+
+.section__list__item__icon-container {
+  height: 64px;
+  width: 64px;
+  background-color: var(--color-light-gray-1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.section__list__item__icon {
+  height: 48px;
+  width: 48px;
+}
+
+.section__list__item__loading-score-icon-container {
+  display: flex;
+  margin-left: auto;
+}
+
+.section__list__item__loading-score-icon {
+  height: 40px;
+}

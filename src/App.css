@@ -1,0 +1,77 @@
+#root {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 700px;
+  min-height: inherit;
+  width: inherit;
+}
+
+/* Change semantic main to be top level with header and footer. move page class to root (parent div) */
+.page {
+  text-align: center;
+  min-height: inherit;
+  padding: 1rem 2rem;
+  background-color: var(--color-light-gray-1);
+}
+
+.page__icon {
+  height: 6rem;
+  background-color: var(--color-light-gray-1);
+}
+
+.page__title {
+  font: SF Pro Display;
+  font-weight: 600;
+  size: 24px;
+}
+
+.header {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  height: 2rem;
+  text-align: right;
+}
+
+.header__icon {
+  height: 22px;
+  width: 22px;
+}
+
+.section__list__item__header {
+  font: SF Pro Display;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.section__list__item__translation {
+  font: SF Pro Text;
+  font-size: 14px;
+  color: var(--color-light-gray-3);
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  background: linear-gradient(to top, rgba(243, 243, 243, 1), rgba(243, 243, 243, 0));  
+}
+
+.footer__button {
+  border-radius: 20px;
+  background-color: var(--color-blue-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.footer__button--blue {
+  background-color: var(--color-uni-blue);
+}
