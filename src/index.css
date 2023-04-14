@@ -42,15 +42,13 @@ body {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  padding: 0.6em 1.2em;
   color: var(--color-white);
   cursor: pointer;
-  transition: border-color 0.25s;
+  font-size: 1em;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 /* Utility Classes */

@@ -1,0 +1,11 @@
+.history-beta-page {
+  position: "absolute";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* padding: 1rem 2rem; */
+  min-height: 100vh;
+  background-color: var(--color-light-gray-1);
+  overflow: hidden;
+}

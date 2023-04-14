@@ -1,12 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Section } from '../../layout/Section';
 import hotelIcon from '../../assets/hotel.svg'
 import historyIcon from '../../assets/history.svg'
 import phrasebookIcon from '../../assets/phrasebook.svg';
-import './lessonpage.css';
+
+/**
+ * This Beta Lesson Page is for testing and trying different animations. 
+ * CSS and code copied from original page
+ */
 
 type Goal = {
   id: string;
@@ -50,25 +55,30 @@ const TaskContent: React.FC<TaskContent> = ({ header, translation }) => (
   </div>
 )
 
-export const LessonPage = () => {
+export const LessonBetaPage = () => {
+  const location = useLocation();
+  const loc__array = location.pathname.split('/')
+  const showLessonBetaPage = loc__array.length <= 3;
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
+    <AnimatePresence>
+      <Outlet /> 
+      <AnimatePresence> 
+        {showLessonBetaPage && <motion.div        
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        exit={{ x: -100 }}
-        transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 100 }}
+        exit={{ x: -100, opacity: 0 }}
+        transition={{ duration: 0.25, delay: .25, type: "spring", stiffness: 100 }}
       >
         <motion.header className='header' layout>
-          <Link to="/lesson/friday-nights/history">
+          <Link to="/lesson-beta/friday-nights/history">
             <motion.img
               className='header__icon'
               src={historyIcon} alt={`history icon`}
             />
           </Link>
         </motion.header>
-        <LazyLoadImage className="page__icon" src={hotelIcon} alt={`hotel icon`} height={100} width={100} />
+        <LazyLoadImage className="page__icon" src={hotelIcon} alt={`hotel icon`} height={100} width={100}/>
         <h2 className='page__title'>Hotel Check-in</h2>
         <Section.SectionContainer>
           <Section.Title>Scenario</Section.Title>
@@ -100,14 +110,20 @@ export const LessonPage = () => {
             ))}
           </Section.List>
         </Section.SectionContainer>
-        <footer className='footer'>
-          <motion.button whileTap={{ scale: 0.95, backgroundColor: "#b2bcc6" }} className="footer__button">
-            <LazyLoadImage className="footer__phrasebook-button" src={phrasebookIcon} alt={`phrasebook icon`} height={30} width={30} />
-            View Phrasebook
-          </motion.button>
-          <motion.button whileTap={{ scale: 0.95, backgroundColor: "#335bff" }} className="footer__button footer__button--blue">Start</motion.button>
-        </footer>
-      </motion.div>
+        {showLessonBetaPage &&
+          <motion.footer className='footer'
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+          >
+            <motion.button whileTap={{ scale: 0.95, backgroundColor: "#b2bcc6" }} className="footer__button">
+              <LazyLoadImage className="footer__phrasebook-button" src={phrasebookIcon} alt={`phrasebook icon`} height={30} width={30}/>
+              View Phrasebook
+            </motion.button>
+            <motion.button whileTap={{ scale: 0.95, backgroundColor: "#335bff" }} className="footer__button footer__button--blue">Start</motion.button>
+          </motion.footer>}
+      </motion.div>}          
+      
+      </AnimatePresence>
     </AnimatePresence>
   )
 }

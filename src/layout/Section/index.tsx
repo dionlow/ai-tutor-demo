@@ -39,13 +39,16 @@ const ListBulletItem: React.FC<SectionBulletListItemProps> = ({ children }) => (
 )
 
 type SectionNoBulletListItemProps = {
+  delay?: number
   children: React.ReactNode;
 }
 
-const ListNoBulletItem: React.FC<SectionNoBulletListItemProps> = ({ children }) => (
+const ListNoBulletItem: React.FC<SectionNoBulletListItemProps> = ({ children, delay }) => (
   <motion.li
     whileTap={{ backgroundColor: "#D4D4D4" }}
-    transition={{ duration: 0.2, delay: 0.1 }}
+    initial={{x: 100}}
+    animate={{x: 0}}
+    transition={{ duration: 0.3, delay: delay ? delay : .1 }}
     className='section__list__item'>
     {children}
   </motion.li>

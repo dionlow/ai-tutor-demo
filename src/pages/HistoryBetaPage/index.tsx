@@ -1,7 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { motion, AnimatePresence } from "framer-motion";
 
 import loadingScoreIcon from '../../assets/loading-score.svg';
 import backIcon from '../../assets/back-icon.svg'
@@ -11,6 +10,10 @@ import { StarRating } from "../../components/StarRating";
 
 import "./historypage.css";
 
+/**
+ * This Beta History Page is for testing and trying different animations. 
+ * CSS and code copied from original page
+ */
 
 type History = {
   id: string;
@@ -101,7 +104,7 @@ const TaskContent: React.FC<TaskContent> = ({ header, description, loading, star
   </div>
 )
 
-export function HistoryPage() {
+export function HistoryBetaPage() {
   const navigate = useNavigate();
   const goBack = useCallback(() => {
     navigate(-1);
@@ -110,25 +113,32 @@ export function HistoryPage() {
   return (
     <AnimatePresence>
       <motion.div
+        // className="history-beta-page"
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          minHeight: "100vh",
+          padding: "1rem 2rem",
+          backgroundColor: "var(--color-light-gray-1)"
+        }}
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: .25 }}
+        exit={{ x: 100 }}
+        transition={{ duration: 1.5, delay: .25, type: "spring" }}
       >
-        <motion.header 
-        className="header flex" 
-        initial={{opacity:0 }} 
-        animate={{opacity:1}}
-        transition={{duration: .5, delay: .5}}
-        >
-          <LazyLoadImage onClick={goBack} className='header__icon' src={backIcon} alt={`back icon`} height={10} width={10}/>
+        <motion.header className="header flex" layout>
+          <img onClick={goBack} className='header__icon' src={backIcon} alt={`back icon`} />
           <h3 className="history-title">Lesson History</h3>
         </motion.header>
         <Section.SectionContainer>
           <Section.List>
-            {HISTORY_DATA.map((history, idx) => {
+            {HISTORY_DATA.map(history => {
               return (
                 <>
-                  <Section.ListNoBulletItem key={history.id} delay={idx * .2}>
+                  <Section.ListNoBulletItem key={history.id}>
                     <TaskContent
                       header={history.header}
                       description={history.description}

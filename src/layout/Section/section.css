@@ -30,6 +30,5 @@
   content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: var(--color-uni-green); /* Change the color */
   font-weight: bold; 
-  /* width: 2em; Also needed for space (tweak if needed) */
   margin: 0 .5rem;
 }
