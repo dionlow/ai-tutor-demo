@@ -53,7 +53,7 @@ const TaskContent: React.FC<TaskContent> = ({ header, translation }) => (
 export const LessonPage = () => {
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence >
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

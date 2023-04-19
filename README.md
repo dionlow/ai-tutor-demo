@@ -92,6 +92,14 @@ Alternatively we can also use [react-spring](https://github.com/pmndrs/react-spr
 We can use `AnimatePresence` which will abstract some of the lifecycle state when components are unmounting. We could have a bit more control if we use [react-transition](https://reactcommunity.org/react-transition-group/switch-transition)
 
 
+#### Level 3
+
+We can use gesture libraries such as [use-gesture](https://www.npmjs.com/package/@use-gesture/react). There are some gesture libraries that try to simulate page transitions, but I could only find some that were custom or not well supported. 
+
+### Next Steps
+
+I would consider using react-native or flutter to use cross platform api's. 
+
 ## Author
 
 - Frontend Mentor - [@dionlow](https://www.frontendmentor.io/profile/dionlow)
