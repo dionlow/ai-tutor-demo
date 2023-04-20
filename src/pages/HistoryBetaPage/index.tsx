@@ -138,7 +138,7 @@ export function HistoryBetaPage() {
             {HISTORY_DATA.map(history => {
               return (
                 <>
-                  <Section.ListNoBulletItem key={history.id}>
+                  <Section.ListNoBulletItem key={`history-beta-${history.id}`}>
                     <TaskContent
                       header={history.header}
                       description={history.description}

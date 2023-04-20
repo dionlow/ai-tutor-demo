@@ -89,7 +89,7 @@ export const LessonBetaPage = () => {
         <Section.SectionContainer>
           <Section.Title>Goal</Section.Title>
           <Section.List>
-            <Section.ListBulletItem key={GOAL_DATA.id}>
+            <Section.ListBulletItem key={`goal-${GOAL_DATA.id}`}>
               <TaskContent
                 header={GOAL_DATA.ko}
                 translation={GOAL_DATA.en} />
@@ -102,7 +102,7 @@ export const LessonBetaPage = () => {
           <Section.Title>Also Try</Section.Title>
           <Section.List>
             {ALSO_TRY_DATA.map(goal => (
-              <Section.ListBulletItem key={goal.id}>
+              <Section.ListBulletItem key={`also-try-${goal.id}`}>
                 <TaskContent
                   header={goal.ko}
                   translation={goal.en} />

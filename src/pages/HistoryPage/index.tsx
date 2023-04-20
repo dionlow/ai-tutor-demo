@@ -128,7 +128,7 @@ export function HistoryPage() {
             {HISTORY_DATA.map((history, idx) => {
               return (
                 <>
-                  <Section.ListNoBulletItem key={history.id} delay={idx * .2}>
+                  <Section.ListNoBulletItem key={`history-${history.id}`} delay={idx * .2}>
                     <TaskContent
                       header={history.header}
                       description={history.description}
