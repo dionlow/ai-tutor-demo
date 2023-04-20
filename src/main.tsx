@@ -6,7 +6,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Router basename="/ai-tutor-demo">
+    <Router basename={process.env.PUBLIC_URL}>
       <App />
     </Router>
   </React.StrictMode>,
