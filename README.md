@@ -18,9 +18,8 @@ This project hopes to create a native feel on mobile.
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Steps](#steps)
+  - [Approach](#approaches)
 - [Author](#author)
 
 ## Overview
@@ -33,14 +32,13 @@ The user should be able to jump into the view and be indistinguishable from nati
 
 Mobile Demo
 
-![]()
-
+![demo](./public/demo-1-gif.gif)
 
 ### Links
 
 <!-- UPDATE -->
-- Solution URL: [code](https://github.com/dionlow/)
-- Live Site URL: [demo](https://www.dionlow.me/)
+- Solution URL: [code](https://github.com/dionlow/ai-tutor-demo)
+- Live Site URL: [demo](https://www.dionlow.me/ai-tutor-demo/)
 
 ## My process
 
@@ -96,10 +94,10 @@ We can use `AnimatePresence` which will abstract some of the lifecycle state whe
 
 We can use gesture libraries such as [use-gesture](https://www.npmjs.com/package/@use-gesture/react). There are some gesture libraries that try to simulate page transitions, but I could only find some that were custom or not well supported. 
 
-### Next Steps
+### Other considerations
 
-I would consider using react-native or flutter to use cross platform api's. 
+I would consider explore using react-native or flutter to use cross platform api's. 
 
 ## Author
 
-- Frontend Mentor - [@dionlow](https://www.frontendmentor.io/profile/dionlow)
+dionlow 
